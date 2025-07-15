@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #86733d, #32385f);
+  color: #070707;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+}
+body.dark {
+  background: linear-gradient(to right, #1f1f1f, #574e4e);
+  color: #080808;
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  padding: 8px 14px;
+  border-radius: 25px;
+  background: #fff;
+  color: #5a5353;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 16px;
+}
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  background-color: rgba(160, 152, 152, 0.9);
+  color: #000;
+  outline: none;
+  margin-top: 6px;
+}
+
+.custom-select-wrapper {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.custom-select {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 14px 18px;
+  color: #6b6262;
+  font-weight: 600;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-align: left;
+  user-select: none;
+}
+.custom-select:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+.custom-select .selected {
+  display: block;
+  color: #fff;
+}
+
+.custom-select .options {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  animation: fadeIn 0.2s ease-in;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.custom-select .options li {
+  padding: 14px 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.custom-select .options li:hover,
+.custom-select .options li.active {
+  background: rgba(0, 123, 255, 0.5);
+  color: #fff;
+}
+
+.fancy-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.fancy-checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: #fff;
+  border: 2px solid #232527;
+  cursor: pointer;
+}
+.fancy-checkbox input[type="checkbox"]:checked {
+  background: #1a1e22;
+}
+.fancy-checkbox label {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#generate {
+  width: 100%;
+  background-color: #0f0c01;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+#generate:hover {
+  background-color: #6e6320;
+}
+
+#output {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#output canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+#download {
+  margin-top: 20px;
+  padding: 10px 24px;
+  font-size: 16px;
+  background-color: #121314;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#download:hover {
+  background-color: #6b672b;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

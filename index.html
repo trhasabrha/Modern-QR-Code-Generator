@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR-Code Generator</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="qrcode.min.js"></script>
+  </head>
+  <body>
+    <button id="theme-toggle">🌓</button>
+    <div class="container">
+      <h1>🤳QR-Code Generator🖊️</h1>
+
+      <div class="custom-select-wrapper">
+        <div class="custom-select" id="type-dropdown">
+          <span class="selected">Text / URL</span>
+          <ul class="options">
+            <li data-value="text" class="active">Text / URL</li>
+            <li data-value="vcard">vCard (Contact)</li>
+            <li data-value="wifi">Wi-Fi</li>
+          </ul>
+        </div>
+      </div>
+      <input type="hidden" id="type" value="text" />
+
+      <div id="input-text" class="input-type input-group">
+        <input type="text" id="text" placeholder="Enter text or URL" />
+      </div>
+
+      <div id="input-wifi" class="input-type input-group" style="display: none">
+        <input type="text" id="ssid" placeholder="WiFi Name (SSID)" />
+        <input type="text" id="password" placeholder="WiFi Password" />
+        <input
+          type="text"
+          id="encryption"
+          placeholder="Encryption Type (WPA/WEP)"
+        />
+      </div>
+
+      <div
+        id="input-vcard"
+        class="input-type input-group"
+        style="display: none"
+      >
+        <input type="text" id="name" placeholder="Full Name" />
+        <input type="text" id="phone" placeholder="Phone Number" />
+        <input type="email" id="email" placeholder="Email Address" />
+      </div>
+
+      <div class="custom-select-wrapper">
+        <div class="custom-select" id="size-dropdown">
+          <span class="selected">Medium</span>
+          <ul class="options">
+            <li data-value="150">Small</li>
+            <li data-value="200" class="active">Medium</li>
+            <li data-value="300">Large</li>
+          </ul>
+        </div>
+      </div>
+      <input type="hidden" id="size" value="200" />
+
+      <div class="fancy-checkbox">
+        <input type="checkbox" id="include-logo" />
+        <label for="include-logo">Embed Logo in QR</label>
+      </div>
+
+      <button id="generate">Generate QR-Code</button>
+
+      <div id="output"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
